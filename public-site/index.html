@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dupli Products - Shopify Product Duplicator App</title>
+  <meta name="description" content="Dupli Products helps Shopify merchants duplicate products quickly with bulk options by selected products, tag, product type, and collection." />
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+   
+
+  <style>
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
+
+    .fade-up {
+      animation: fadeUp 0.8s ease both;
+    }
+
+    .float-card {
+      animation: float 5s ease-in-out infinite;
+    }
+
+    .glass {
+      background: rgba(255,255,255,0.78);
+      backdrop-filter: blur(18px);
+    }
+  </style>
+</head>
+
+<body class="bg-slate-50 text-slate-900">
+  <!-- Header -->
+  <header class="sticky top-0 z-50 border-b border-slate-200 glass">
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4">
+      <a href="/" class="flex items-center gap-3">
+        <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-slate-950 text-white shadow-lg">
+          <span class="text-xl">⧉</span>
+        </div>
+        <span class="text-xl font-bold tracking-tight">Dupli Products</span>
+      </a>
+
+      <nav class="hidden items-center gap-8 text-sm font-medium text-slate-600 md:flex">
+        <a href="#features" class="hover:text-slate-950">Features</a>
+        <a href="#how-it-works" class="hover:text-slate-950">How it works</a>
+        <a href="#screenshots" class="hover:text-slate-950">Screenshots</a>
+        <a href="#faq" class="hover:text-slate-950">FAQ</a>
+        <a href="/privacy.html" class="hover:text-slate-950">Privacy</a>
+      </nav>
+
+      <a href="#contact" class="hidden rounded-xl bg-slate-950 px-5 py-2.5 text-sm font-semibold text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-slate-800 md:inline-flex">
+        Contact Support
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="relative overflow-hidden bg-gradient-to-br from-white via-cyan-50 to-slate-100">
+    <div class="mx-auto grid max-w-7xl items-center gap-12 px-5 py-20 md:grid-cols-2 md:py-28">
+      <div class="fade-up">
+        <div class="mb-6 inline-flex rounded-full bg-cyan-100 px-4 py-2 text-sm font-semibold text-cyan-800">
+          Built for Shopify merchants
+        </div>
+
+        <h1 class="max-w-xl text-5xl font-extrabold leading-tight tracking-tight md:text-6xl">
+          Duplicate Shopify products in seconds
+        </h1>
+
+        <p class="mt-6 max-w-xl text-lg leading-8 text-slate-600">
+          Dupli Products helps merchants duplicate products quickly with bulk options by selected products, tag, product type, and collection — with controls for images, metafields, status, handle suffix, and duplicate count.
+        </p>
+
+        <div class="mt-8 flex flex-col gap-4 sm:flex-row">
+          <a href="#features" class="rounded-xl bg-slate-950 px-7 py-4 text-center font-semibold text-white shadow-xl transition hover:-translate-y-1 hover:bg-slate-800">
+            Explore Features
+          </a>
+          <a href="#screenshots" class="rounded-xl border border-slate-300 bg-white px-7 py-4 text-center font-semibold text-slate-900 transition hover:-translate-y-1 hover:shadow-lg">
+            See App Preview →
+          </a>
+        </div>
+      </div>
+
+      <div class="fade-up float-card">
+        <div class="rounded-3xl border border-slate-200 bg-white p-4 shadow-2xl">
+          <div class="rounded-2xl bg-slate-100 p-5">
+            <div class="mb-5 flex items-center justify-between">
+              <div>
+                <p class="font-bold">Dupli Products Dashboard</p>
+                <p class="text-sm text-slate-500">Newest products first</p>
+              </div>
+              <button class="rounded-lg bg-slate-950 px-4 py-2 text-sm text-white">Bulk duplicate</button>
+            </div>
+
+            <div class="grid gap-3">
+              <div class="rounded-xl bg-white p-4 shadow-sm">
+                <p class="font-semibold">Layman 2</p>
+                <p class="text-sm text-slate-500">Handle: layman-2-copy-1-2</p>
+              </div>
+              <div class="rounded-xl bg-white p-4 shadow-sm">
+                <p class="font-semibold">New Latest Product</p>
+                <p class="text-sm text-slate-500">Status: Active · Variants: 3</p>
+              </div>
+              <div class="rounded-xl bg-white p-4 shadow-sm">
+                <p class="font-semibold">By tag - test</p>
+                <p class="text-sm text-slate-500">Copied with metafields and images</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id="features" class="py-20">
+    <div class="mx-auto max-w-7xl px-5">
+      <div class="mx-auto max-w-2xl text-center">
+        <h2 class="text-4xl font-extrabold tracking-tight">Everything you need to duplicate products faster</h2>
+        <p class="mt-4 text-lg text-slate-600">A simple Shopify admin app made for clean, quick product duplication.</p>
+      </div>
+
+      <div class="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div class="rounded-3xl bg-white p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
+          <div class="text-3xl">⚡</div>
+          <h3 class="mt-5 text-xl font-bold">Fast Duplicate</h3>
+          <p class="mt-3 text-slate-600">Duplicate products quickly using Shopify native duplication workflow.</p>
+        </div>
+
+        <div class="rounded-3xl bg-white p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
+          <div class="text-3xl">🧩</div>
+          <h3 class="mt-5 text-xl font-bold">Bulk Duplicate</h3>
+          <p class="mt-3 text-slate-600">Duplicate by selected products, tag, product type, or collection.</p>
+        </div>
+
+        <div class="rounded-3xl bg-white p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
+          <div class="text-3xl">🖼️</div>
+          <h3 class="mt-5 text-xl font-bold">Copy Images</h3>
+          <p class="mt-3 text-slate-600">Choose whether duplicated products should include images.</p>
+        </div>
+
+        <div class="rounded-3xl bg-white p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
+          <div class="text-3xl">🏷️</div>
+          <h3 class="mt-5 text-xl font-bold">Tags & Metafields</h3>
+          <p class="mt-3 text-slate-600">Copy metafields and add a duplicate tag for easy tracking.</p>
+        </div>
+
+        <div class="rounded-3xl bg-white p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
+          <div class="text-3xl">🔗</div>
+          <h3 class="mt-5 text-xl font-bold">Handle Suffix</h3>
+          <p class="mt-3 text-slate-600">Add custom handle suffixes like copy, backup, sale, or test.</p>
+        </div>
+
+        <div class="rounded-3xl bg-white p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
+          <div class="text-3xl">🔍</div>
+          <h3 class="mt-5 text-xl font-bold">Search Products</h3>
+          <p class="mt-3 text-slate-600">Search products by title or SKU directly from the dashboard.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section id="how-it-works" class="bg-white py-20">
+    <div class="mx-auto max-w-7xl px-5">
+      <div class="text-center">
+        <h2 class="text-4xl font-extrabold">How it works</h2>
+        <p class="mt-4 text-lg text-slate-600">Duplicate products in a few simple steps.</p>
+      </div>
+
+      <div class="mt-14 grid gap-6 md:grid-cols-3">
+        <div class="rounded-3xl border border-slate-200 p-8 text-center">
+          <div class="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-cyan-500 font-bold text-white">1</div>
+          <h3 class="mt-5 text-lg font-bold">Select source</h3>
+          <p class="mt-3 text-slate-600">Choose selected products, tag, product type, or collection.</p>
+        </div>
+
+        <div class="rounded-3xl border border-slate-200 p-8 text-center shadow-xl">
+          <div class="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-cyan-500 font-bold text-white">2</div>
+          <h3 class="mt-5 text-lg font-bold">Set options</h3>
+          <p class="mt-3 text-slate-600">Choose count, status, images, metafields, tag, and handle suffix.</p>
+        </div>
+
+        <div class="rounded-3xl border border-slate-200 p-8 text-center">
+          <div class="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-cyan-500 font-bold text-white">3</div>
+          <h3 class="mt-5 text-lg font-bold">Create duplicate</h3>
+          <p class="mt-3 text-slate-600">New products appear on top of the dashboard after refresh.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Screenshots -->
+  <section id="screenshots" class="py-20">
+    <div class="mx-auto max-w-7xl px-5">
+      <div class="text-center">
+        <h2 class="text-4xl font-extrabold">Simple Shopify admin interface</h2>
+        <p class="mt-4 text-lg text-slate-600">Clean dashboard for quick product duplication.</p>
+      </div>
+
+      <div class="mt-14 grid gap-8 md:grid-cols-2">
+        <div class="rounded-3xl bg-white p-4 shadow-xl">
+          <div class="rounded-2xl bg-slate-100 p-6">
+            <h3 class="font-bold">Dashboard</h3>
+            <p class="mt-2 text-sm text-slate-600">Search products and duplicate from a clean table.</p>
+            <div class="mt-5 space-y-3">
+              <div class="h-12 rounded-xl bg-white"></div>
+              <div class="h-12 rounded-xl bg-white"></div>
+              <div class="h-12 rounded-xl bg-white"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="rounded-3xl bg-white p-4 shadow-xl">
+          <div class="rounded-2xl bg-slate-100 p-6">
+            <h3 class="font-bold">Duplicate modal</h3>
+            <p class="mt-2 text-sm text-slate-600">Control duplicate source and copy options.</p>
+            <div class="mt-5 grid gap-3">
+              <div class="h-10 rounded-xl bg-white"></div>
+              <div class="h-10 rounded-xl bg-white"></div>
+              <div class="h-10 rounded-xl bg-white"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="bg-white py-20">
+    <div class="mx-auto max-w-4xl px-5">
+      <div class="text-center">
+        <h2 class="text-4xl font-extrabold">Frequently asked questions</h2>
+      </div>
+
+      <div class="mt-10 space-y-4">
+        <details class="rounded-2xl border border-slate-200 bg-slate-50 p-6">
+          <summary class="cursor-pointer font-bold">Does Dupli Products store my product data?</summary>
+          <p class="mt-3 text-slate-600">No. Product data is read from and written to your Shopify store through Shopify Admin API. The app only stores session data required for authentication.</p>
+        </details>
+
+        <details class="rounded-2xl border border-slate-200 bg-slate-50 p-6">
+          <summary class="cursor-pointer font-bold">Can I duplicate products in bulk?</summary>
+          <p class="mt-3 text-slate-600">Yes. You can duplicate selected products or use tag, product type, and collection as bulk sources.</p>
+        </details>
+
+        <details class="rounded-2xl border border-slate-200 bg-slate-50 p-6">
+          <summary class="cursor-pointer font-bold">Can I copy images and metafields?</summary>
+          <p class="mt-3 text-slate-600">Yes. The app includes options to copy images and metafields when duplicating products.</p>
+        </details>
+
+        <details class="rounded-2xl border border-slate-200 bg-slate-50 p-6">
+          <summary class="cursor-pointer font-bold">How do I contact support?</summary>
+          <p class="mt-3 text-slate-600">You can contact us by email or WhatsApp from the support page.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="contact" class="bg-slate-950 py-20 text-white">
+    <div class="mx-auto max-w-4xl px-5 text-center">
+      <h2 class="text-4xl font-extrabold">Ready to duplicate products faster?</h2>
+      <p class="mt-5 text-lg text-slate-300">Dupli Products is built to save time for Shopify merchants managing many products.</p>
+      <div class="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
+        <a href="mailto:karanbaro.kb@gmail.com" class="rounded-xl bg-cyan-400 px-7 py-4 font-bold text-slate-950 shadow-lg transition hover:-translate-y-1">
+          Email Support
+        </a>
+        <a href="https://wa.me/918107895012" class="rounded-xl border border-white/20 px-7 py-4 font-bold text-white transition hover:-translate-y-1 hover:bg-white/10">
+          WhatsApp Chat
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-slate-100 py-12">
+    <div class="mx-auto grid max-w-7xl gap-8 px-5 md:grid-cols-3">
+      <div>
+        <h3 class="text-xl font-bold">Dupli Products</h3>
+        <p class="mt-3 text-slate-600">Fast product duplication for Shopify stores.</p>
+      </div>
+
+      <div>
+        <h4 class="font-bold uppercase tracking-wide text-slate-500">Product</h4>
+        <div class="mt-4 grid gap-3 text-slate-600">
+          <a href="#features">Features</a>
+          <a href="#how-it-works">How it works</a>
+          <a href="#screenshots">Screenshots</a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="font-bold uppercase tracking-wide text-slate-500">Legal & Support</h4>
+        <div class="mt-4 grid gap-3 text-slate-600">
+          <a href="/privacy.html">Privacy Policy</a>
+          <a href="/terms.html">Terms & Conditions</a>
+          <a href="/contact.html">Contact Support</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="mx-auto mt-10 max-w-7xl border-t border-slate-200 px-5 pt-8 text-center text-sm text-slate-500">
+      © 2026 Dupli Products. All rights reserved.
+    </div>
+  </footer>
+</body>
+</html>
