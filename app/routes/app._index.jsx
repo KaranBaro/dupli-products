@@ -754,11 +754,17 @@ export default function Index() {
     initialData.searchValue || "",
   );
 
+  const [appReady, setAppReady] = useState(false);
+
+  useEffect(() => {
+    setAppReady(true);
+  }, []);
+
   const handledDuplicateRef = useRef(false);
 
   const prevSearchRef = useRef(initialData.searchValue || "");
 
-  const [setDashboardRefreshing] = useState(false);
+  //const [setDashboardRefreshing] = useState(false);
 
   //const prevSearchRef = useRef("");
 
@@ -830,28 +836,28 @@ export default function Index() {
   }, [searchValue, searchFetcher]);
 
   useEffect(() => {
-    if (duplicateFetcher.state !== "idle" || !duplicateFetcher.data) return;
+  if (duplicateFetcher.state !== "idle" || !duplicateFetcher.data) return;
+  if (handledDuplicateRef.current) return;
 
-    if (handledDuplicateRef.current) return;
+  if (duplicateFetcher.data.success && duplicateFetcher.data.message) {
+    handledDuplicateRef.current = true;
 
-    if (duplicateFetcher.data.success && duplicateFetcher.data.message) {
-      handledDuplicateRef.current = true;
+    shopify.toast.show(duplicateFetcher.data.message);
 
-      shopify.toast.show(duplicateFetcher.data.message);
+    setDuplicateModalOpen(false);
+    setSelectedProduct(null);
+    setSearchValue("");
+    prevSearchRef.current = "";
 
-      setDuplicateModalOpen(false);
-      setSelectedProduct(null);
-      setDashboardRefreshing(true);
+    const formData = new FormData();
+    formData.set("actionType", "search");
+    formData.set("search", "");
+    formData.set("direction", "first");
+    formData.set("cursor", "");
 
-      const formData = new FormData();
-      formData.set("actionType", "search");
-      formData.set("search", "");
-      formData.set("direction", "first");
-      formData.set("cursor", "");
-
-      searchFetcher.submit(formData, { method: "post" });
-    }
-  }, [duplicateFetcher.data, duplicateFetcher.state, searchFetcher, shopify]);
+    searchFetcher.submit(formData, { method: "post" });
+  }
+}, [duplicateFetcher.data, duplicateFetcher.state, searchFetcher, shopify]);
 
   const submitSearch = ({ direction = "first", cursor = "" } = {}) => {
     const formData = new FormData();
@@ -1007,6 +1013,12 @@ export default function Index() {
       </IndexTable.Cell>
     </IndexTable.Row>
   ));
+
+  if (!appReady) {
+
+    return null;
+
+  }
 
   return (
     <Box width="100%" margin="0 auto" position="relative">

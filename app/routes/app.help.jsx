@@ -14,6 +14,7 @@ import {
 } from "@shopify/polaris";
 import { ChevronDownIcon, ChevronUpIcon } from "@shopify/polaris-icons";
 
+
 const faqs = [
   {
     question: "How do I duplicate a product?",
