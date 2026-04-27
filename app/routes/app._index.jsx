@@ -6,6 +6,8 @@ import { authenticate } from "../shopify.server";
 import PropTypes from "prop-types";
 import {
   Page,
+  SkeletonPage,
+  SkeletonBodyText,
   Card,
   TextField,
   Button,
@@ -754,19 +756,15 @@ export default function Index() {
     initialData.searchValue || "",
   );
 
-  const [appReady, setAppReady] = useState(false);
-
-  useEffect(() => {
-    setAppReady(true);
-  }, []);
-
   const handledDuplicateRef = useRef(false);
 
   const prevSearchRef = useRef(initialData.searchValue || "");
 
-  //const [setDashboardRefreshing] = useState(false);
-
-  //const prevSearchRef = useRef("");
+  const [pageReady, setPageReady] = useState(false);
+  useEffect(() => {
+    const timer = setTimeout(() => setPageReady(true), 250);
+    return () => clearTimeout(timer);
+  }, []);
 
   const [duplicateModalOpen, setDuplicateModalOpen] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState(null);
@@ -1014,14 +1012,26 @@ export default function Index() {
     </IndexTable.Row>
   ));
 
-  if (!appReady) {
+  if (!pageReady) {
+    return (
+      <SkeletonPage title="Dashboard" primaryAction>
+        <Card>
+          <Box padding="400">
+            <SkeletonBodyText lines={3} />
+          </Box>
+        </Card>
 
-    return null;
-
+        <Card>
+          <Box padding="400">
+            <SkeletonBodyText lines={8} />
+          </Box>
+        </Card>
+      </SkeletonPage>
+    );
   }
 
   return (
-    <Box width="100%" margin="0 auto" position="relative">
+    <Box maxWidth="1600px" width="100%" margin="0 auto" position="relative">
       <Page
         title="Dashboard"
         subtitle="Browse products, inspect key product data, and duplicate products quickly."
@@ -1089,30 +1099,32 @@ export default function Index() {
                 </InlineStack>
               </Box>
 
-              <IndexTable
-                resourceName={{ singular: "product", plural: "products" }}
-                itemCount={products.length}
-                selectedItemsCount={
-                  allResourcesSelected ? "All" : selectedResources.length
-                }
-                onSelectionChange={handleSelectionChange}
-                selectable
-                headings={[
-                  { title: "Product" },
-                  { title: "Handle" },
-                  { title: "Status" },
-                  { title: "Vendor" },
-                  { title: "Type" },
-                  { title: "Price" },
-                  { title: "Inventory" },
-                  { title: "Variants" },
-                  { title: "Tags" },
-                  { title: "Metafields" },
-                  { title: "Action" },
-                ]}
-              >
-                {rowMarkup}
-              </IndexTable>
+              <Box overflowX="auto" width="100%">
+                <IndexTable
+                  resourceName={{ singular: "product", plural: "products" }}
+                  itemCount={products.length}
+                  selectedItemsCount={
+                    allResourcesSelected ? "All" : selectedResources.length
+                  }
+                  onSelectionChange={handleSelectionChange}
+                  selectable
+                  headings={[
+                    { title: "Product" },
+                    { title: "Handle" },
+                    { title: "Status" },
+                    { title: "Vendor" },
+                    { title: "Type" },
+                    { title: "Price" },
+                    { title: "Inventory" },
+                    { title: "Variants" },
+                    { title: "Tags" },
+                    { title: "Metafields" },
+                    { title: "Action" },
+                  ]}
+                >
+                  {rowMarkup}
+                </IndexTable>
+              </Box>
 
               <Box padding="400">
                 <InlineStack align="space-between">
