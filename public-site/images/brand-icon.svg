@@ -1,0 +1,9 @@
+<svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" fill="none">
+  <!-- Yellow behind -->
+  <rect x="66" y="38" width="47" height="70" stroke="#FFD600" stroke-width="2"/>
+  <rect x="70" y="44" width="37" height="58" stroke="#FFD600" stroke-width="2"/>
+
+  <!-- Red in front -->
+  <rect x="5" y="3" width="76" height="112" stroke="#FF1E1E" stroke-width="3"/>
+  <rect x="12" y="12" width="62" height="94" stroke="#FF1E1E" stroke-width="3"/>
+</svg>
