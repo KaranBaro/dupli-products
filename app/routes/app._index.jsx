@@ -1023,7 +1023,7 @@ export default function Index() {
   return (
     <Box width="100%" margin="0 auto" position="relative">
       <Page
-        title="Dupli Products Dashboard"
+        title="Dashboard"
         subtitle="Browse products, inspect key product data, and duplicate products quickly."
       >
         <BlockStack gap="400">

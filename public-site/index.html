@@ -5,32 +5,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dupli Products - Shopify Product Duplicator App</title>
   <meta name="description" content="Dupli Products helps Shopify merchants duplicate products quickly with bulk options by selected products, tag, product type, and collection." />
+  <link rel="icon" type="image/x-icon" href="./images/brand_favicon.ico" />
 
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
    
-
   <style>
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(24px); }
       to { opacity: 1; transform: translateY(0); }
     }
-
     @keyframes float {
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-12px); }
     }
-
     .fade-up {
       animation: fadeUp 0.8s ease both;
     }
-
     .float-card {
       animation: float 5s ease-in-out infinite;
     }
-
     .glass {
-      background: rgba(255,255,255,0.78);
+      background: rgba(255,255,255);
       backdrop-filter: blur(18px);
+    }
+    .brand_logo {
+      max-width: 170px;
     }
   </style>
 </head>
@@ -40,10 +39,7 @@
   <header class="sticky top-0 z-50 border-b border-slate-200 glass">
     <div class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4">
       <a href="/" class="flex items-center gap-3">
-        <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-slate-950 text-white shadow-lg">
-          <span class="text-xl">⧉</span>
-        </div>
-        <span class="text-xl font-bold tracking-tight">Dupli Products</span>
+        <img src="./images/Brand_Logo.png" alt="Dupli Products logo" class="brand_logo">
       </a>
 
       <nav class="hidden items-center gap-8 text-sm font-medium text-slate-600 md:flex">
@@ -204,27 +200,37 @@
       </div>
 
       <div class="mt-14 grid gap-8 md:grid-cols-2">
-        <div class="rounded-3xl bg-white p-4 shadow-xl">
-          <div class="rounded-2xl bg-slate-100 p-6">
+        <div class="rounded-3xl bg-white p-4 shadow-xl hover:shadow-2xl transition">
+          <div class="h-[260px] md:h-[320px] lg:h-[360px] overflow-hidden rounded-2xl overflow-hidden border border-slate-200">
+            <img 
+              src="./images/dashboard.png" 
+              alt="Dupli Products Dashboard" 
+              class="w-full h-auto object-cover"
+            >
+          </div>
+
+          <div class="p-4">
             <h3 class="font-bold">Dashboard</h3>
-            <p class="mt-2 text-sm text-slate-600">Search products and duplicate from a clean table.</p>
-            <div class="mt-5 space-y-3">
-              <div class="h-12 rounded-xl bg-white"></div>
-              <div class="h-12 rounded-xl bg-white"></div>
-              <div class="h-12 rounded-xl bg-white"></div>
-            </div>
+            <p class="mt-2 text-sm text-slate-600">
+              Search products and duplicate directly from a clean table UI.
+            </p>
           </div>
         </div>
 
-        <div class="rounded-3xl bg-white p-4 shadow-xl">
-          <div class="rounded-2xl bg-slate-100 p-6">
-            <h3 class="font-bold">Duplicate modal</h3>
-            <p class="mt-2 text-sm text-slate-600">Control duplicate source and copy options.</p>
-            <div class="mt-5 grid gap-3">
-              <div class="h-10 rounded-xl bg-white"></div>
-              <div class="h-10 rounded-xl bg-white"></div>
-              <div class="h-10 rounded-xl bg-white"></div>
-            </div>
+        <div class="rounded-3xl bg-white p-4 shadow-xl hover:shadow-2xl transition">
+          <div class="h-[260px] md:h-[320px] lg:h-[360px] overflow-hidden rounded-2xl overflow-hidden border border-slate-200">
+            <img 
+              src="./images/duplicate_modal.png" 
+              alt="Duplicate Product Modal" 
+              class="w-full h-auto object-cover"
+            >
+          </div>
+
+          <div class="p-4">
+            <h3 class="font-bold">Duplicate Modal</h3>
+            <p class="mt-2 text-sm text-slate-600">
+              Control duplicate source, count, metafields, images, and more.
+            </p>
           </div>
         </div>
       </div>
