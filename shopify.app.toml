@@ -15,10 +15,6 @@ api_version = "2026-01"
   topics = [ "app/uninstalled" ]
   uri = "/webhooks/app/uninstalled"
 
-  [[webhooks.subscriptions]]
-  topics = [ "app/scopes_update" ]
-  uri = "/webhooks/app/scopes_update"
-
 [access_scopes]
 scopes = "write_inventory,read_inventory,read_locales,write_locales,write_locations,read_locations,read_products,write_products"
 optional_scopes = []
@@ -26,6 +22,7 @@ use_legacy_install_flow = false
 
 [auth]
 redirect_urls = [ ]
+
 
 [pos]
 embedded = true
