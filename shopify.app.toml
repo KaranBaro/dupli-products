@@ -2,7 +2,10 @@
 
 client_id = "0b7ba07c3b612a3e7ec0a61cd794aa29"
 name = "Dupli Products"
-application_url = "https://dupli-app.com"
+application_url = "https://dupli-products.onrender.com"
+redirect_urls = [
+  "https://dupli-products.onrender.com/auth/callback"
+]
 embedded = true
 
 [build]
