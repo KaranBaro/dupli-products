@@ -12,5 +12,5 @@ export const action = async ({ request }) => {
     await db.session.deleteMany({ where: { shop } });
   }
 
-  return new Response();
+  return new Response("OK", { status: 200 });
 };
