@@ -1,7 +1,14 @@
 import { authenticate } from "../shopify.server";
 
 export const action = async ({ request }) => {
-  await authenticate.webhook(request);
+  try {
+    const { shop, topic } = await authenticate.webhook(request);
 
-  return new Response("OK", { status: 200 });
+    console.log(`Received ${topic} compliance webhook for ${shop}`);
+
+    return new Response("OK", { status: 200 });
+  } catch (error) {
+    console.error("Compliance webhook failed:", error);
+    return new Response("OK", { status: 200 });
+  }
 };
